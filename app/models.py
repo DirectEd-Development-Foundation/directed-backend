@@ -37,6 +37,17 @@ class Students(Base):
     pAcceptance_token = Column(String, unique=True)
     grant_received = Column(Numeric, server_default=text('0'))
     total_grant = Column(Numeric, server_default = text('0'))
+    # New fields
+    student_image = Column(String)
+    stake_address = Column(String)
+    school_id = Column(String, ForeignKey('schools.name', ondelete="CASCADE", onupdate="CASCADE"))
+    cohort_id = Column(String, ForeignKey('cohorts.name', ondelete="SET NULL", onupdate="CASCADE"))
+    location = Column(String)
+    description = Column(Text)
+    telegram = Column(String)
+    linkedin = Column(String)
+    twitter = Column(String)
+    whatsapp = Column(String)
 
 
 class Milesones(Base):

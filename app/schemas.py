@@ -36,11 +36,9 @@ class Cohort(CohortBase):
 class StudentBase(BaseModel):
     name: str
     email: EmailStr
-    school: str
     gender: StudentGenderEnum
     pseudonym: str
     personal_id: str
-    cohort: Optional[str]
     phone_number: Optional[str]
     cardano_wallet: Optional[str]
     atala_prism_did: Optional[str]
@@ -49,11 +47,22 @@ class StudentBase(BaseModel):
     pAcceptance_token: Optional[str]
     grant_received: Optional[float] = 0.0
     total_grant: Optional[float] = 0.0
+    student_image: Optional[str]
+    stake_address: Optional[str]
+    location: Optional[str]
+    description: Optional[str]
+    telegram: Optional[str]
+    linkedin: Optional[str]
+    twitter: Optional[str]
+    whatsapp: Optional[str]
+    school_id: Optional[str]
+    cohort_id: Optional[str]
+    
+
 
 class StudentCreate(StudentBase):
     pseudonym: str
     personal_id: str
-    cohort: Optional[str]
     phone_number: Optional[str]
     cardano_wallet: Optional[str]
     atala_prism_did: Optional[str]
@@ -62,6 +71,8 @@ class StudentCreate(StudentBase):
     pAcceptance_token: Optional[str]
     grant_received: Optional[float] = 0.0
     total_grant: Optional[float] = 0.0
+    school_id: Optional[str]
+    cohort_id: Optional[str]
 
 
 class Student(StudentBase):
