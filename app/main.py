@@ -5,7 +5,7 @@ import json
 import os
 from .routers import cohort, milestone, school, student
 from .database import Base
-
+#testing
 
 #create all tables according to models
 models.Base.metadata.create_all(bind=engine)
@@ -22,7 +22,7 @@ app = FastAPI(docs_url="/documentation", openapi_tags=metadata)
 
 @app.get('/')
 def root():
-    return {'message': "Hello home."}
+    return {'message': "Hello from DirectEd home."}
 
 
 app.include_router(school.router)
